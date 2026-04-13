@@ -4,20 +4,25 @@ import Navbar from "./Navbar"
 import axios from "axios"
 import auth from "../config/firebase"
 import { useNavigate } from "react-router-dom"
+import Loading from "./Loading"
 
 function Blog() {
     const [blogs, setBlogs] = useState([])
     const navigate = useNavigate()
     const [admin, setAdmin] = useState(false)
+    const [loading, setLoading] = useState(false)
     const API = import.meta.env.VITE_APP_API_URL
     const UID = import.meta.env.VITE_APP_UID
 
     const fetchblogs = useCallback(() => {
+        setLoading(true)
         axios.get(`${API}/blogs`).then((res) => {
             console.log(res.data)
             setBlogs(res.data)
         }).catch((error) => {
             console.log("Error in getting data", error)
+        }).finally(() => {
+            setLoading(false)
         })
     }, [])
 
@@ -91,7 +96,10 @@ function Blog() {
                 <button type="submit" className="my-2 bg-orange-400 cursor-pointer hover:bg-orange-600 text-black font-semibold w-full p-2 rounded">Add Blog</button>
             </form>}
         </div>
-        <div className="flex flex-wrap justify-between items-center w-full gap-1">
+
+        {loading && <Loading></Loading>}
+
+        <div className="flex flex-wrap justify-between items-center w-full gap-1 mb-5">
             {
                 blogs.map((blog, index) => {
                     return (
