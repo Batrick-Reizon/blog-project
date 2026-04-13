@@ -29,6 +29,6 @@
 - **Data Handling** – Blog data is stored and retrieved from MongoDB via Express APIs.
 
 # Live Project
-Visit the live project . Explore the full blogging experience — with secure login, content creation, and real-time interactivity.
+Visit the live project https://blog-project-five-hazel.vercel.app/ . Explore the full blogging experience — with secure login, content creation, and real-time interactivity.
 
 Thank you for visiting my Blog Firebase Project!
