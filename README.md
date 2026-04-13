@@ -38,6 +38,6 @@
 - Users can edit or delete blogs, and updates reflect instantly.
 
 # How to View
-Check out the live demo here . Try logging in using Firebase credentials to explore how authentication works!
+Check out the live demo here https://blog-project-five-hazel.vercel.app/. Try logging in using Firebase credentials to explore how authentication works!
 
 Thank you for visiting my Blog App (MERN Stack)!. Feel free to explore the project and share your feedback or suggestions.
